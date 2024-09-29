@@ -4,12 +4,14 @@ import {
   combineReducers,
   Reducer,
 } from '@reduxjs/toolkit';
+import sidebarSlice, { sidebarListType } from '@Store/slices/sidebarSlice';
 import common, { CommonState } from '../slices/common';
 import loader, { LoaderState } from '../slices/loader';
 
 export interface IRootReducer {
   common: CommonState;
   loader: LoaderState;
+  sidebarSlice: sidebarListType;
 }
 
 const rootReducer: Reducer<
@@ -18,6 +20,7 @@ const rootReducer: Reducer<
 > = combineReducers({
   common,
   loader,
+  sidebarSlice,
 });
 
 export default rootReducer;
