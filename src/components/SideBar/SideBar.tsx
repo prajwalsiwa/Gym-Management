@@ -1,3 +1,3 @@
 export default function SideBar() {
-  return <div>SideBar</div>;
+  return <div className="w-64 border border-black">SideBar</div>;
 }
