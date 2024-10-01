@@ -7,8 +7,10 @@ interface sideBarPropsTypes {
 
 function SideBarItem({ linkName, path }: sideBarPropsTypes) {
   return (
-    <div>
-      <NavLink to={`/${path}`}>{linkName}</NavLink>;
+    <div className=" flex w-full  pl-8  ">
+      <NavLink to={path}>
+        <div className="text-lg font-normal">{linkName}</div>
+      </NavLink>
     </div>
   );
 }
