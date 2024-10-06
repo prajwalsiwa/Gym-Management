@@ -33,7 +33,7 @@ const initialState: sidebarListType = {
     {
       id: 4,
       path: '/login',
-      name: 'signin',
+      name: 'Sign In',
       icon: 'login',
     },
   ],
