@@ -8,6 +8,24 @@ const appRoutes: IRoute[] = [
     component: Dashboard,
     authenticated: false,
   },
+  {
+    path: '/membership',
+    name: 'Dashboard ',
+    component: Dashboard,
+    authenticated: false,
+  },
+  {
+    path: '/subscription',
+    name: 'subcription ',
+    component: Dashboard,
+    authenticated: false,
+  },
+  {
+    path: '/login',
+    name: 'login ',
+    component: Dashboard,
+    authenticated: false,
+  },
 ];
 
 export default appRoutes;
