@@ -2,7 +2,9 @@ import { useTypedSelector } from '@Store/hooks';
 import SideBarItem from './SideBarItem';
 
 export default function SideBar() {
-  const sidebarList = useTypedSelector(state => state.sidebarSlice.sidebarList);
+  const { sidebarList, activeItemId } = useTypedSelector(
+    state => state.sidebarSlice,
+  );
 
   return (
     <div className="h-full w-72 bg-white">
@@ -16,10 +18,12 @@ export default function SideBar() {
       <div className="flex flex-col gap-6   pl-2 pt-10 ">
         {sidebarList.map(item => (
           <SideBarItem
+            id={item.id}
             key={item.id}
             linkName={item.name}
             path={item.path}
             iconName={item.icon}
+            isActive={item.id === activeItemId}
           />
         ))}
       </div>
