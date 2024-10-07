@@ -31,12 +31,7 @@ export default function App() {
     state => state.common.promptDialogContent,
   );
 
-  const routesWithoutSidebar = [
-    '/login',
-    '/sign-up',
-    '/forgot-password',
-    '/public-page',
-  ];
+  const routesWithoutSidebar = ['/sign-up', '/forgot-password', '/public-page'];
 
   const hideSideBar = routesWithoutSidebar.some(url => pathname.includes(url));
 
