@@ -51,6 +51,7 @@ const sidebarSlice = createSlice({
         activeItemId: action.payload,
       };
     },
+    deleteItem() {},
   },
 });
 
