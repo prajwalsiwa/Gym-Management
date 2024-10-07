@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 type sidebarListItemType = {
   id: number;
@@ -8,6 +8,7 @@ type sidebarListItemType = {
 };
 export interface sidebarListType {
   sidebarList: sidebarListItemType[];
+  activeItemId: number | null;
 }
 
 const initialState: sidebarListType = {
@@ -37,12 +38,20 @@ const initialState: sidebarListType = {
       icon: 'login',
     },
   ],
+  activeItemId: 1,
 };
 
 const sidebarSlice = createSlice({
   name: 'sidebar',
   initialState,
-  reducers: {},
+  reducers: {
+    setActiveItem(state, action: PayloadAction<number>) {
+      return {
+        ...state,
+        activeItemId: action.payload,
+      };
+    },
+  },
 });
 
 export { sidebarSlice };
