@@ -1,4 +1,6 @@
 import Dashboard from '@Views/Dashboard';
+import Membership from '@Views/Membership';
+import LogIn from '@Views/LogIn';
 import { IRoute } from './types';
 
 const appRoutes: IRoute[] = [
@@ -11,7 +13,7 @@ const appRoutes: IRoute[] = [
   {
     path: '/membership',
     name: 'Dashboard ',
-    component: Dashboard,
+    component: Membership,
     authenticated: false,
   },
   {
@@ -23,7 +25,7 @@ const appRoutes: IRoute[] = [
   {
     path: '/login',
     name: 'login ',
-    component: Dashboard,
+    component: LogIn,
     authenticated: false,
   },
 ];
