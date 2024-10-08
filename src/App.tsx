@@ -18,6 +18,7 @@ import {
   getModalContent,
   getPromptDialogContent,
 } from '@Constants/modalContents';
+import SideBar from '@Components/SideBar/SideBar';
 
 export default function App() {
   const { pathname } = useLocation();
@@ -31,7 +32,12 @@ export default function App() {
     state => state.common.promptDialogContent,
   );
 
-  const routesWithoutSidebar = ['/sign-up', '/forgot-password', '/public-page'];
+  const routesWithoutSidebar = [
+    '/login',
+    '/sign-up',
+    '/forgot-password',
+    '/public-page',
+  ];
 
   const hideSideBar = routesWithoutSidebar.some(url => pathname.includes(url));
 
@@ -55,9 +61,11 @@ export default function App() {
         !process.env.DISABLE_DOM_TO_CODE &&
         initDomToCode()}
       <div
-        className={`${hideSideBar ? 'ml-0' : `ml-0 flex h-screen w-screen bg-blue-50`}`}
+        className={`${hideSideBar ? 'ml-0 h-screen w-screen' : `ml-0 flex h-screen w-screen bg-blue-50`}`}
       >
         <ToastContainer />
+
+        {!hideSideBar && <SideBar />}
 
         <Modal
           show={showModal}

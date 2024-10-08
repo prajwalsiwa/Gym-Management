@@ -1,9 +1,7 @@
-import SideBar from '@Components/SideBar/SideBar';
-
 export default function Dashboard() {
   return (
-    <div className="h-full w-full">
-      <SideBar />
+    <div className="flex h-full w-full items-center justify-center">
+      <h2>Hello Dashboard</h2>
     </div>
   );
 }

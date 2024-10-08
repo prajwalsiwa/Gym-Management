@@ -84,7 +84,10 @@ function Button({
   return (
     <ButtonContent {...rest} className={`flex items-center gap-1 ${className}`}>
       {leftIcon && (
-        <Icon className={`${iconClassname} !text-icon-sm`} name={leftIcon} />
+        <Icon
+          className={`${iconClassname} material-symbols-outlined !text-icon-sm`}
+          name={leftIcon}
+        />
       )}
       {children}
       {rightIcon && (
