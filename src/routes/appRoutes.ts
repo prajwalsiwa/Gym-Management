@@ -1,5 +1,6 @@
 import Dashboard from '@Views/Dashboard';
 import Membership from '@Views/Membership';
+import Subscription from '@Views/Subscription';
 import LogIn from '@Views/LogIn';
 import { IRoute } from './types';
 
@@ -19,7 +20,7 @@ const appRoutes: IRoute[] = [
   {
     path: '/subscription',
     name: 'subcription ',
-    component: Dashboard,
+    component: Subscription,
     authenticated: false,
   },
   {
