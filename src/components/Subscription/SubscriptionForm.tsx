@@ -14,8 +14,8 @@ function SubscriptionForm() {
   return (
     <div className="flex h-full w-full flex-col items-center   rounded-2xl bg-white  ">
       <div className="flex w-full flex-col   px-10 py-10">
-        <h2 className="text-xl md:text-2xl">Add Members</h2>
-        <span className="text-md text-gray-400">Enter member details!</span>
+        <h2 className="text-xl md:text-2xl">Subscription Package</h2>
+        <span className="text-md text-gray-400">Enter package details!</span>
       </div>
       <div className="flex h-full w-full flex-col gap-4 px-10">
         <div className="flex w-full gap-2">
