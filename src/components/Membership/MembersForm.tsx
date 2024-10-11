@@ -1,5 +1,6 @@
 import { Input, Label, MultiSelect } from '@Components/common/FormUI';
 import Icon from '@Components/common/Icon';
+import RoundedContainer from '@Components/common/RoundedContainer';
 import { Button } from '@Components/RadixComponents/Button';
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';
@@ -12,12 +13,12 @@ function MembersForm() {
     setStartDate(date);
   };
   return (
-    <div className="flex h-full w-full flex-col items-center   rounded-2xl bg-white  ">
-      <div className="flex w-full flex-col   px-10 py-10">
+    <RoundedContainer className="flex h-full   w-full flex-col items-center  border-none bg-white">
+      <div className="flex w-full flex-col   px-10 py-4 xl:py-10">
         <h2 className="text-xl md:text-2xl">Add Members</h2>
         <span className="text-md text-gray-400">Enter member details!</span>
       </div>
-      <div className="flex h-full w-full flex-col gap-4 px-10">
+      <div className="flex h-[32rem] w-full  flex-col gap-4 overflow-y-auto px-10">
         <div className="flex w-full gap-2">
           <div className="w-full">
             <Label>
@@ -164,7 +165,7 @@ function MembersForm() {
           </Button>
         </div>
       </div>
-    </div>
+    </RoundedContainer>
   );
 }
 
