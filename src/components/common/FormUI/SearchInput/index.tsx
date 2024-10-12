@@ -23,15 +23,15 @@ export default function SearchInput({
   return (
     <FlexRow
       className={`group relative w-full items-center 
-        border-b-2 hover:border-b-primary-400 ${className}`}
+        border border-gray-300 hover:border-primary-400 ${className}`}
     >
       <Icon
         name="search"
-        className="text-grey-500 group-hover:text-primary-400"
+        className="text-grey-500  group-hover:text-primary-400"
       />
       <Input
         type="text"
-        className="w-full border-none"
+        className="text-md w-full border-none"
         placeholder={placeholder || 'Search'}
         value={inputValue}
         onChange={onChange}

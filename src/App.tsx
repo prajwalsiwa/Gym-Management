@@ -61,7 +61,7 @@ export default function App() {
         !process.env.DISABLE_DOM_TO_CODE &&
         initDomToCode()}
       <div
-        className={`${hideSideBar ? 'ml-0 h-screen w-screen overflow-hidden' : `ml-0 flex h-screen w-screen overflow-hidden bg-blue-50`}`}
+        className={`${hideSideBar ? 'ml-0 h-screen w-screen overflow-hidden' : `ml-0 flex h-screen w-screen overflow-hidden bg-white`}`}
       >
         <ToastContainer />
 
