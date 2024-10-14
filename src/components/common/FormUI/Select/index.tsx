@@ -110,8 +110,8 @@ export default function Select({
       <div
         ref={dropdownRef}
         className={`group relative flex h-11 w-full
-        cursor-pointer items-center justify-between border-b-2
-        hover:border-blue-400
+        cursor-pointer items-center justify-between border
+        border-gray-300 hover:border-blue-400
         ${className}`}
         onClick={toggleDropdown}
       >
@@ -134,7 +134,7 @@ export default function Select({
           <p
             className={`w-full border-none ${
               selected && selectedLabel ? 'text-grey-800' : ''
-            } px-2 text-sm text-grey-400`}
+            } px-2 text-[1rem] text-grey-400`}
           >
             {getPlaceholderText()}
           </p>
@@ -162,7 +162,7 @@ export default function Select({
         <ul
           className={`scrollbar absolute  z-20 flex max-h-[150px] w-full
            animate-flip-down flex-col overflow-auto rounded-md border bg-white shadow-lg
-             duration-300 ${getPosition(position)} `}
+             duration-300 ${getPosition(position)} ${className} `}
         >
           {options && filterOptions.length > 0 ? (
             filterOptions.map(option => (

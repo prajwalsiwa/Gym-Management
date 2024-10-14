@@ -137,7 +137,7 @@ export default function MultiSelect({
           {options && filterOptions.length > 0 ? (
             filterOptions.map(option => (
               <li
-                className="flex cursor-pointer list-none items-start 
+                className=" z-50 flex cursor-pointer list-none items-start 
                 px-2 py-2 text-sm hover:bg-primary-50"
                 key={option[valueKey]}
                 onClick={e => {
@@ -147,7 +147,7 @@ export default function MultiSelect({
               >
                 <input
                   type="checkbox"
-                  className="mr-2 h-5"
+                  className="mr-2 h-5 "
                   value={option[valueKey]}
                   checked={selected.includes(option[valueKey])}
                   onChange={() => toggleOption(option[valueKey])}

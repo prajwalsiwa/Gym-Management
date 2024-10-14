@@ -69,36 +69,69 @@
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
-
+    
     .no-scrollbar {
       -ms-overflow-style: none; /* IE and Edge */
       scrollbar-width: none; /* Firefox */
     }
-
-    .scrollbar {
-      scrollbar-width: thin;
-      scrollbar-color: transparent transparent;
-      transition: scrollbar-color 0.3s;
-
-      &:hover {
-        scrollbar-color: #989898 transparent;
-      }
-
-      &:not(:hover)::-webkit-scrollbar-thumb {
-        background: transparent;
-      }
-
-      &::-webkit-scrollbar {
-        width: 6px;
-        height: 6px;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        border-radius: 5px;
-        transition: background 0.3s;
-        background: #989898;
-      }
+    
+    .scrollbar::-webkit-scrollbar {
+      width: 7px;
+      height: 10px;
     }
+    .scrollbar::-webkit-scrollbar-track {
+      border-radius: 100vh;
+      background: transparent;
+      margin-block: 6px;
+    }
+    .scrollbar::-webkit-scrollbar-thumb {
+      background: #bdbdbd;
+      border-radius: 100vh;
+      padding-inline: 4px;
+      /* border: 3px solid #f6f7ed; */
+    }
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #bdbdbd;
+    }
+    /* chart scroll bar */
+    .small-scrollbar::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    .small-scrollbar::-webkit-scrollbar-track {
+      border-radius: 100vh;
+      background: transparent;
+      margin-block: 6px;
+    }
+    .small-scrollbar::-webkit-scrollbar-thumb {
+      background: #d3d3d3;
+      border-radius: 100vh;
+      padding-inline: 4px;
+      /* border: 3px solid #f6f7ed; */
+    }
+    .small-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #bdbdbd;
+    }
+    
+    /* search scroll bar */
+    .search-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 5px;
+    }
+    .search-scrollbar::-webkit-scrollbar-track {
+      border-radius: 100vh;
+      background: transparent;
+      margin-block: 6px;
+    }
+    .search-scrollbar::-webkit-scrollbar-thumb {
+      background: #d3d3d3;
+      border-radius: 100vh;
+      padding-inline: 4px;
+      /* border: 3px solid #f6f7ed; */
+    }
+    .search-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #989898;
+  }
   }
 }
 
