@@ -6,6 +6,7 @@ import TableRow, {
   TableHeader,
 } from '@Components/RadixComponents/Table';
 import { motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 
 const membersList = [
   {
@@ -121,9 +122,15 @@ const membersList = [
 ];
 
 const MembersTable = () => {
+  const { pathname } = useLocation();
+
+  const isAddMember = pathname === '/add-membership';
+
   return (
-    <div className="overflow-x-auto">
-      <Table className="w-full table-auto">
+    <div
+      className={`sm:w-[20rem] md:w-[30rem]   lg:w-full ${isAddMember ? 'py-24' : ''}`}
+    >
+      <Table className="w-full">
         <TableHeader>
           <TableRow className="h-8">
             <TableHead className="w-[5%] text-center !text-xs font-bold text-gray-500">
@@ -160,9 +167,10 @@ const MembersTable = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ delay: index * 0.05 }}
+              className="overflow-x-auto"
             >
               <TableCell className="w-[5%] text-center">{index + 1}</TableCell>
-              <TableCell className="w-[20%] text-center">
+              <TableCell className="w-[20%] text-center ">
                 {member.name}
               </TableCell>
               <TableCell className="w-[5%] text-center">{member.age}</TableCell>
