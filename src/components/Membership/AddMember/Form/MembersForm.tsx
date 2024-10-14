@@ -19,9 +19,9 @@ function MembersForm() {
           <span className="text-md text-gray-400">Enter member details!</span>
         </div>
       </div>
-      <RoundedContainer className="relative z-10  flex w-full   flex-col  border  bg-[#F2F2F2] py-6  ">
-        <div className="scrollbar  flex h-[calc(100vh-30rem)] w-full flex-col gap-4 overflow-y-auto  px-4">
-          <div className="flex w-full gap-2">
+      <RoundedContainer className="relative z-10 flex  w-full flex-col justify-between border    bg-[#F2F2F2]  pt-6  ">
+        <div className="scrollbar  flex w-full flex-col gap-4 overflow-y-auto  px-4  lg:h-[calc(100vh-15rem)] 2xl:h-[28rem]">
+          <div className="flex w-full flex-wrap gap-2  xl:flex-nowrap">
             <div className="w-full">
               <Label>
                 First Name<span className="text-lg text-blue-700">*</span>
@@ -32,7 +32,7 @@ function MembersForm() {
                 placeholder="Prajwal"
               />
             </div>
-            <div className="w-full">
+            <div className="w-full ">
               <Label>
                 Last Name<span className="text-lg text-blue-700">*</span>
               </Label>
@@ -43,7 +43,7 @@ function MembersForm() {
               />
             </div>
           </div>
-          <div className="flex w-full gap-2">
+          <div className="flex w-full flex-wrap gap-2 xl:flex-nowrap">
             <div className="w-full">
               <Label>
                 Age<span className="text-lg text-blue-700">*</span>
@@ -68,7 +68,7 @@ function MembersForm() {
           <div className="">
             <span>Gender</span>
             <span className="text-lg text-blue-700">*</span>
-            <div className=" flex w-full justify-between ">
+            <div className=" flex w-full flex-wrap justify-between 2xl:flex-nowrap ">
               <div className="flex w-full gap-6">
                 <div className="flex   items-center justify-center gap-2">
                   <Input type="radio" />
@@ -85,7 +85,7 @@ function MembersForm() {
               </div>
             </div>
           </div>
-          <div className=" relative flex w-full    ">
+          <div className=" relative flex w-full flex-wrap gap-2 xl:flex-nowrap    ">
             <div className="relative z-50 flex w-full flex-col  gap-1">
               <Label htmlFor="Join Date">
                 Membership Start Date
@@ -133,7 +133,7 @@ function MembersForm() {
             />
           </div>
         </div>
-        <div className="flex       gap-4 px-4 ">
+        <div className="flex h-20 items-center       gap-4 bg-[#f2f2f2] px-4 ">
           <Button className="danger h-[2.8rem] w-full bg-teal-500 hover:bg-teal-700">
             Clear Form
           </Button>
