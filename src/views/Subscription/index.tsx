@@ -1,5 +1,5 @@
-import SubscriptionForm from '@Components/Subscription/SubscriptionForm';
-import SubscriptionTable from '@Components/Subscription/SubscriptionTable';
+import SubscriptionForm from '@Components/Subscription/Form/SubscriptionForm';
+import SubscriptionTable from '@Components/Subscription/Table/SubscriptionTable';
 
 function Subscription() {
   return (
