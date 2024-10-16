@@ -1,6 +1,7 @@
 import Dashboard from '@Views/Dashboard';
 import Membership from '@Views/Membership';
 import Subscription from '@Views/Subscription';
+import Settings from '@Views/Settings';
 import LogIn from '@Views/LogIn';
 import AddMember from '@Components/Membership/AddMember';
 import { IRoute } from './types';
@@ -34,6 +35,12 @@ const appRoutes: IRoute[] = [
     path: '/login',
     name: 'login ',
     component: LogIn,
+    authenticated: false,
+  },
+  {
+    path: '/settings',
+    name: 'settings ',
+    component: Settings,
     authenticated: false,
   },
 ];
