@@ -17,7 +17,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        primary: ['Product Sans', 'sans-serif'],
+        // primary: ['Product Sans', 'sans-serif'],
+        primary: ['Roboto', 'Helvetica', 'Arial', 'sans-serif'], 
       },
       colors: {
         primary: {
