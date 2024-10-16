@@ -37,6 +37,12 @@ const initialState: sidebarListType = {
       name: 'Sign In',
       icon: 'login',
     },
+    {
+      id: 5,
+      path: '/settings',
+      name: 'Settings',
+      icon: 'settings',
+    },
   ],
   activeItemId: 1,
 };
