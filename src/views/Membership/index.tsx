@@ -16,7 +16,7 @@ function Membership() {
   return (
     <div className="flex h-full  w-full  flex-col gap-16">
       <Navigation headerName="Membership" />
-      <div className="  flex h-fit w-full flex-col gap-8 rounded-2xl bg-[#f2f2f2] px-10  py-8">
+      <div className="  flex h-full w-full flex-col gap-8 rounded-2xl bg-[#f2f2f2] px-10  py-8">
         <div className="membership-header flex w-full items-center justify-between ">
           <div className="flex w-full items-end justify-center gap-4">
             <SearchInput
