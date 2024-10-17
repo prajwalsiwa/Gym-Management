@@ -12,8 +12,8 @@ function MembersForm() {
     setStartDate(date);
   };
   return (
-    <div className="h-full w-full ">
-      <div className="flex w-full flex-col justify-between   py-4 ">
+    <div className="flex h-full w-full flex-col gap-2 ">
+      <div className="flex w-full flex-col justify-between   ">
         <div>
           <h2 className="text-xl md:text-2xl">Add Members</h2>
           <span className="text-md text-gray-400">Enter member details!</span>
