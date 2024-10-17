@@ -1,6 +1,7 @@
 import RoundedContainer from '@Components/common/RoundedContainer';
 import { Button } from '@Components/RadixComponents/Button';
 import gymlogo from '@Assets/images/gymlogo.png';
+import { useNavigate } from 'react-router-dom';
 
 // const gymInfo = {
 //   id: 1,
@@ -13,6 +14,7 @@ import gymlogo from '@Assets/images/gymlogo.png';
 // };
 
 const GeneralInfo = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex h-full w-full flex-col gap-4 rounded-2xl  bg-white px-6 py-6">
       <h5>My Profile</h5>
@@ -36,6 +38,7 @@ const GeneralInfo = () => {
             <Button
               className="text flex gap-2 rounded-2xl border border-gray-400 bg-white font-medium text-gray-600"
               rightIcon="border_color"
+              onClick={() => navigate('/general-settings')}
             >
               Edit
             </Button>
@@ -49,6 +52,7 @@ const GeneralInfo = () => {
                 <Button
                   className="text flex gap-2 rounded-2xl border border-gray-400 bg-white font-medium text-gray-600"
                   rightIcon="border_color"
+                  onClick={() => navigate('/general-settings')}
                 >
                   Edit
                 </Button>
@@ -98,6 +102,7 @@ const GeneralInfo = () => {
                 <Button
                   className="text flex gap-2 rounded-2xl border border-gray-400 bg-white font-medium text-gray-600"
                   rightIcon="border_color"
+                  onClick={() => navigate('/general-settings')}
                 >
                   Edit
                 </Button>

@@ -4,6 +4,8 @@ import Subscription from '@Views/Subscription';
 import Settings from '@Views/Settings';
 import LogIn from '@Views/LogIn';
 import AddMember from '@Components/Membership/AddMember';
+import GeneralInfoForm from '@Components/AccountSettings/GeneralInfo/Form/GeneralInfoForm';
+import AddSubscription from '@Components/Subscription/AddSubscription';
 import { IRoute } from './types';
 
 const appRoutes: IRoute[] = [
@@ -32,6 +34,12 @@ const appRoutes: IRoute[] = [
     authenticated: false,
   },
   {
+    path: '/add-package',
+    name: 'Add packagge ',
+    component: AddSubscription,
+    authenticated: false,
+  },
+  {
     path: '/login',
     name: 'login ',
     component: LogIn,
@@ -41,6 +49,12 @@ const appRoutes: IRoute[] = [
     path: '/settings',
     name: 'settings ',
     component: Settings,
+    authenticated: false,
+  },
+  {
+    path: '/general-settings',
+    name: 'General Settings ',
+    component: GeneralInfoForm,
     authenticated: false,
   },
 ];
