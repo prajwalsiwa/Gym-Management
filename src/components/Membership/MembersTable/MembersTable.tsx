@@ -128,7 +128,7 @@ const MembersTable = () => {
 
   return (
     <div
-      className={`sm:w-[20rem] md:w-[30rem]   lg:w-full ${isAddMember ? 'py-24' : ''}`}
+      className={`sm:w-[20rem] md:w-[30rem]   lg:w-full ${isAddMember ? 'py-[4.8rem]' : ''}`}
     >
       <Table className="w-full">
         <TableHeader>
