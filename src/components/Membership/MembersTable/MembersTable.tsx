@@ -1,3 +1,5 @@
+import Icon from '@Components/common/Icon';
+import Modal from '@Components/common/Modal';
 import TableRow, {
   Table,
   TableBody,
@@ -6,6 +8,7 @@ import TableRow, {
   TableHeader,
 } from '@Components/RadixComponents/Table';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const membersList = [
@@ -122,9 +125,18 @@ const membersList = [
 ];
 
 const MembersTable = () => {
+  const [isOpenPayment, setIsOpenPayment] = useState(false);
   const { pathname } = useLocation();
 
   const isAddMember = pathname === '/add-membership';
+
+  const handleOpenPayment = () => {
+    setIsOpenPayment(true);
+  };
+
+  const handleClosePayment = () => {
+    setIsOpenPayment(false);
+  };
 
   return (
     <div
@@ -154,9 +166,9 @@ const MembersTable = () => {
             <TableHead className="w-[10%] text-center !text-xs font-bold text-gray-500">
               Membership Duration
             </TableHead>
-            <TableHead className="w-[15%] text-center !text-xs font-bold text-gray-500">
-              Membership Level
-            </TableHead>
+            <TableHead className="w-[5%] text-center !text-xs font-bold text-gray-500" />
+            <TableHead className="w-[5%] text-center !text-xs font-bold text-gray-500" />
+            <TableHead className="w-[5%] text-center !text-xs font-bold text-gray-500" />
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -186,13 +198,42 @@ const MembersTable = () => {
               <TableCell className="w-[10%] text-center">
                 {member.membershipDuration}
               </TableCell>
-              <TableCell className="w-[15%] text-center">
-                {member.membershipLevel}
+              <TableCell className="w-[5%] text-center  ">
+                <Icon name="edit" className="text-teal-600" />
+              </TableCell>
+              <TableCell className="w-[5%] text-center ">
+                <Icon name="delete" className="text-red-600" />
+              </TableCell>
+              <TableCell className="flex w-[5%] text-center ">
+                <Icon
+                  name="paid"
+                  className="text-blue-600"
+                  onClick={handleOpenPayment}
+                />
               </TableCell>
             </motion.tr>
           ))}
         </TableBody>
       </Table>
+
+      <Modal
+        title="Payment"
+        subtitle="Member transaction"
+        show={isOpenPayment}
+        onClose={handleClosePayment}
+        className="custom-class !w-[26rem]"
+      >
+        <div className="flex flex-col gap-4">
+          <div>
+            <h5>Amount</h5>
+            <span>5000</span>
+          </div>
+          <div>
+            <h5>Paid on</h5>
+            <span>2024/01/24</span>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 };
