@@ -1,3 +1,4 @@
+import Icon from '@Components/common/Icon';
 import TableRow, {
   Table,
   TableBody,
@@ -103,7 +104,7 @@ const SubscriptionTable = () => {
       <Table className="w-full">
         <TableHeader>
           <TableRow className="h-8">
-            <TableHead className="w-[10%] text-center !text-xs font-bold text-gray-500">
+            <TableHead className="w-[5%] text-center !text-xs font-bold text-gray-500">
               S.N.
             </TableHead>
             <TableHead className="w-[20%] text-center !text-xs font-bold text-gray-500">
@@ -115,12 +116,14 @@ const SubscriptionTable = () => {
             <TableHead className="w-[20%] text-center !text-xs font-bold text-gray-500">
               Package Price
             </TableHead>
-            <TableHead className="w-[15%] text-center !text-xs font-bold text-gray-500">
+            <TableHead className="w-[10%] text-center !text-xs font-bold text-gray-500">
               Discount
             </TableHead>
             <TableHead className="w-[15%] text-center !text-xs font-bold text-gray-500">
               Total Price
             </TableHead>
+            <TableHead className="w-[5%] text-center !text-xs font-bold text-gray-500" />
+            <TableHead className="w-[5%] text-center !text-xs font-bold text-gray-500" />
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -133,7 +136,7 @@ const SubscriptionTable = () => {
               transition={{ delay: index * 0.05 }}
               className="overflow-x-auto"
             >
-              <TableCell className="w-[10%] text-center">{index + 1}</TableCell>
+              <TableCell className="w-[5%] text-center">{index + 1}</TableCell>
               <TableCell className="w-[20%] text-center ">
                 {subscriptionPackage.name}
               </TableCell>
@@ -143,11 +146,17 @@ const SubscriptionTable = () => {
               <TableCell className="w-[20%] text-center">
                 {subscriptionPackage.packagePrice}
               </TableCell>
-              <TableCell className="w-[15%] text-center">
+              <TableCell className="w-[10%] text-center">
                 {subscriptionPackage.discountPrice}
               </TableCell>
               <TableCell className="w-[15%] text-center">
                 {subscriptionPackage.totalPrice}
+              </TableCell>
+              <TableCell className="w-[5%] text-center">
+                <Icon name="edit" className="text-teal-600" />
+              </TableCell>
+              <TableCell className="w-[5%] text-center">
+                <Icon name="delete" className="text-red-600" />
               </TableCell>
             </motion.tr>
           ))}
