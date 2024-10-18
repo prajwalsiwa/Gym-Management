@@ -120,7 +120,7 @@ export default function Select({
             type="text"
             placeholder={getPlaceholderText()}
             className={`w-full border-none ${inputTagClassname} ${
-              selected ? 'placeholder:text-grey-800' : ''
+              selected ? 'placeholder:text-grey-800 ' : ''
             } focus:placeholder:text-grey-400 `}
             value={searchText}
             onClick={e => {
@@ -133,7 +133,7 @@ export default function Select({
         ) : (
           <p
             className={`w-full border-none ${
-              selected && selectedLabel ? 'text-grey-800' : ''
+              selected && selectedLabel ? 'text-md text-grey-800' : ''
             } px-2 text-[1rem] text-grey-400`}
           >
             {getPlaceholderText()}
