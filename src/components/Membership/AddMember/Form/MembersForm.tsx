@@ -1,4 +1,4 @@
-import { Input, Label } from '@Components/common/FormUI';
+import { Input, Label, Select } from '@Components/common/FormUI';
 import RoundedContainer from '@Components/common/RoundedContainer';
 import { Button } from '@Components/RadixComponents/Button';
 import { useState } from 'react';
@@ -20,7 +20,7 @@ function MembersForm() {
         </div>
       </div>
       <RoundedContainer className="relative z-10 flex  w-full flex-col justify-between border    bg-[#F2F2F2]  pt-6  ">
-        <div className="scrollbar  flex w-full flex-col gap-4 overflow-y-auto  px-4  lg:h-[calc(100vh-15rem)] 2xl:h-[28rem]">
+        <div className="scrollbar  flex w-full flex-col gap-4 overflow-y-auto  px-4  lg:h-[calc(100vh-15rem)] 2xl:h-[32rem]">
           <div className="flex w-full flex-wrap gap-2  xl:flex-nowrap">
             <div className="w-full">
               <Label>
@@ -28,7 +28,7 @@ function MembersForm() {
               </Label>
               <Input
                 type="text"
-                className="w-full  rounded-lg border bg-white"
+                className="text-md w-full rounded-lg border bg-white"
                 placeholder="Prajwal"
               />
             </div>
@@ -38,7 +38,7 @@ function MembersForm() {
               </Label>
               <Input
                 type="text"
-                className="w-full  rounded-lg border bg-white"
+                className="text-md w-full  rounded-lg border bg-white"
                 placeholder="Siwa"
               />
             </div>
@@ -65,6 +65,65 @@ function MembersForm() {
               />
             </div>
           </div>
+          <div className=" relative flex w-full flex-wrap items-end  gap-2 xl:flex-nowrap    ">
+            <div className="flex w-full flex-col ">
+              <Label>
+                Membership Start Date
+                <span className="text-lg text-blue-700">*</span>
+              </Label>
+              <DatePicker
+                showIcon
+                selected={startDate}
+                onChange={handleDateChange}
+                placeholderText="Select Date"
+                dateFormat="yyyy/MM/dd"
+                calendarIconClassName="mt-1"
+                className="z-40 h-11 w-full rounded-lg    border border-gray-300 outline-blue-500 focus:outline focus:outline-offset-0"
+              />
+            </div>
+            <div className="w-full">
+              <Label>
+                Membership Expiry Date
+                <span className=" text-lg text-blue-700">*</span>
+              </Label>
+              <Input
+                type="number"
+                className="w-full rounded-lg  border bg-white"
+                placeholder="In Months"
+              />
+            </div>
+          </div>
+          <div>
+            <Label>
+              Select package<span className="text-lg text-blue-700">*</span>
+            </Label>
+            <Select
+              options={[
+                {
+                  label: 'Strength Training',
+                  value: 'option1',
+                },
+                {
+                  label: 'Cardio and Fitness',
+                  value: 'option2',
+                },
+                {
+                  label: 'Muscle Gain Program',
+                  value: 'option3',
+                },
+                {
+                  label: 'Full Body Conditioning',
+                  value: 'option4',
+                },
+                {
+                  label: 'Weight Loss Package',
+                  value: 'option5',
+                },
+              ]}
+              placeholder="Select package"
+              className=" rounded-lg bg-white "
+            />
+          </div>
           <div className="">
             <span>Gender</span>
             <span className="text-lg text-blue-700">*</span>
@@ -83,40 +142,6 @@ function MembersForm() {
                 <Label>Others</Label>
                 <Input type="text" />
               </div>
-            </div>
-          </div>
-          <div className=" relative flex w-full flex-wrap gap-2 xl:flex-nowrap    ">
-            <div className="relative z-50 flex w-full flex-col  gap-1">
-              <Label htmlFor="Join Date">
-                Membership Start Date
-                <span className="text-lg text-blue-700">*</span>
-              </Label>
-
-              <div className="relative w-full ">
-                <DatePicker
-                  showIcon
-                  selected={startDate}
-                  onChange={handleDateChange}
-                  dateFormat="yyyy/MM/dd"
-                  className="block h-[2.75rem] w-full rounded-lg border border-gray-300 bg-white 
-    outline-1 outline-blue-500 focus:border-none focus:outline focus:outline-1 focus:outline-offset-0"
-                  placeholderText="Select Date"
-                  popperPlacement="bottom-start"
-                  popperClassName="z-50 w-full"
-                  calendarIconClassName="mt-1.5 text w-full"
-                />
-              </div>
-            </div>
-            <div className="w-full">
-              <Label>
-                Membership Duration
-                <span className=" text-lg text-blue-700">*</span>
-              </Label>
-              <Input
-                type="number"
-                className="w-full rounded-lg  border bg-white"
-                placeholder="In Months"
-              />
             </div>
           </div>
 
