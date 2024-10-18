@@ -90,7 +90,15 @@ function SubscriptionForm() {
               />
             </div>
           </div>
-
+          <div className="flex items-center gap-2 pl-1">
+            <Input
+              type="checkbox"
+              className="h-4 w-4 rounded border-gray-300 "
+            />
+            <Label className="!text-sm !font-medium !text-gray-700 ">
+              is Active?<span className="text-blue-700">*</span>
+            </Label>
+          </div>
           <div className="flex w-full flex-col gap-2">
             <Label>
               Description<span className="text-lg text-blue-700">*</span>
