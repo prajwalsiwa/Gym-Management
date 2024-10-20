@@ -11,6 +11,7 @@ interface IModalProps {
   headerContent?: string;
   zIndex?: number;
   hideCloseButton?: boolean;
+  headerClassName?: string;
 }
 
 export default function Modal({
@@ -23,6 +24,7 @@ export default function Modal({
   headerContent,
   zIndex = 1111,
   hideCloseButton,
+  headerClassName,
 }: IModalProps) {
   const nodeRef = useRef(null);
 
@@ -63,13 +65,13 @@ export default function Modal({
                    rounded-[20px] bg-white shadow ${className}`}
               >
                 <div
-                  className={`flex items-start justify-between
+                  className={`flex w-full items-start justify-between
                     rounded-t-[20px] px-7 ${
                       !subtitle && title ? 'py-5' : 'py-5'
                     }`}
                 >
                   {headerContent || (
-                    <div className="space-y-1">
+                    <div className={`space-y-1 ${headerClassName}`}>
                       <h3 className="font-bold ">{title}</h3>
                       <p className="text-body-lg">{subtitle}</p>
                     </div>
