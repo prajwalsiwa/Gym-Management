@@ -1,5 +1,6 @@
 import Icon from '@Components/common/Icon';
 import Modal from '@Components/common/Modal';
+import DeleteModal from '@Components/common/Modal/DeleteModal';
 import TableRow, {
   Table,
   TableBody,
@@ -127,6 +128,7 @@ const membersList = [
 const MembersTable = () => {
   const [isOpenPayment, setIsOpenPayment] = useState(false);
   const { pathname } = useLocation();
+  const [showDelete, setShowDelete] = useState(false);
 
   const isAddMember = pathname === '/add-membership';
 
@@ -136,6 +138,18 @@ const MembersTable = () => {
 
   const handleClosePayment = () => {
     setIsOpenPayment(false);
+  };
+
+  const handleShowDelete = () => {
+    setShowDelete(true);
+  };
+
+  const handleCloseDelete = () => {
+    setShowDelete(false);
+  };
+
+  const handleDelete = () => {
+    // console.log('member deleted');
   };
 
   return (
@@ -202,7 +216,11 @@ const MembersTable = () => {
                 <Icon name="edit" className="text-teal-600" />
               </TableCell>
               <TableCell className="w-[5%] text-center ">
-                <Icon name="delete" className="text-red-600" />
+                <Icon
+                  name="delete"
+                  className="text-red-600"
+                  onClick={handleShowDelete}
+                />
               </TableCell>
               <TableCell className="flex w-[5%] text-center ">
                 <Icon
@@ -234,6 +252,13 @@ const MembersTable = () => {
           </div>
         </div>
       </Modal>
+      <DeleteModal
+        header="Delete Member?"
+        subheader="Are you sure you want to delete?"
+        isOpen={showDelete}
+        handleClose={handleCloseDelete}
+        onDeleteClick={handleDelete}
+      />
     </div>
   );
 };

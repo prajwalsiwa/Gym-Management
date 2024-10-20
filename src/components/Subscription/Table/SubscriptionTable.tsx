@@ -1,4 +1,5 @@
 import Icon from '@Components/common/Icon';
+import DeleteModal from '@Components/common/Modal/DeleteModal';
 import TableRow, {
   Table,
   TableBody,
@@ -7,6 +8,7 @@ import TableRow, {
   TableHeader,
 } from '@Components/RadixComponents/Table';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const packageList = [
@@ -94,8 +96,21 @@ const packageList = [
 
 const SubscriptionTable = () => {
   const { pathname } = useLocation();
+  const [showDelete, setShowDelete] = useState(false);
 
   const isAddMember = pathname === '/add-package';
+
+  const handleShowDelete = () => {
+    setShowDelete(true);
+  };
+
+  const handleCloseDelete = () => {
+    setShowDelete(false);
+  };
+
+  const handleDelete = () => {
+    // console.log('package deleted');
+  };
 
   return (
     <div
@@ -156,12 +171,23 @@ const SubscriptionTable = () => {
                 <Icon name="edit" className="text-teal-600" />
               </TableCell>
               <TableCell className="w-[5%] text-center">
-                <Icon name="delete" className="text-red-600" />
+                <Icon
+                  name="delete"
+                  className="text-red-600"
+                  onClick={handleShowDelete}
+                />
               </TableCell>
             </motion.tr>
           ))}
         </TableBody>
       </Table>
+      <DeleteModal
+        header="Delete Package?"
+        subheader="Are you sure you want to delete?"
+        isOpen={showDelete}
+        handleClose={handleCloseDelete}
+        onDeleteClick={handleDelete}
+      />
     </div>
   );
 };
