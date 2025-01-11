@@ -22,7 +22,7 @@ module.exports = {
   plugins: ['react-hooks', 'prettier'],
   rules: {
     'prettier/prettier': 'error',
-    'no-console': 'error',
+    'no-console': ['error', { allow: ['warn', 'error'] }],
     'react/react-in-jsx-scope': 0,
     'react/jsx-props-no-spreading': 'off',
     'react-hooks/rules-of-hooks': 'error',
