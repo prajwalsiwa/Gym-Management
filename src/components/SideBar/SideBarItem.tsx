@@ -37,7 +37,7 @@ function SideBarItem({
             className={`${isActive ? '!text-2xl !font-medium text-blue-900' : '!text-slate-500'}`}
           />
           <div
-            className={`flex w-full items-start  ${isActive ? 'rounded-sm border-r-4 border-r-blue-800 text-lg font-medium tracking-wide text-black' : 'border-none text-lg text-slate-500'}`}
+            className={`flex w-full items-start  ${isActive ? 'rounded-sm border-r-4 border-r-blue-800 text-lg font-medium tracking-wide text-black dark:text-grey-500' : 'border-none text-lg text-slate-500 dark:text-white'}`}
           >
             {linkName}
           </div>

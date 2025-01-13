@@ -10,14 +10,14 @@ import { IRoute } from './types';
 
 const appRoutes: IRoute[] = [
   {
-    path: '/',
+    path: '/dashboard',
     name: 'Dashboard ',
     component: Dashboard,
     authenticated: false,
   },
   {
     path: '/membership',
-    name: 'Dashboard ',
+    name: 'Membership ',
     component: Membership,
     authenticated: false,
   },

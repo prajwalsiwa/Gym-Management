@@ -15,7 +15,7 @@ const initialState: sidebarListType = {
   sidebarList: [
     {
       id: 1,
-      path: '/',
+      path: '/dashboard',
       name: 'Home',
       icon: 'home',
     },

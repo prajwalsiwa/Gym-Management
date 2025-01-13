@@ -1,28 +1,18 @@
-import SearchInput from '@Components/common/FormUI/SearchInput';
-import Navigation from '@Components/Navigation';
+// import SearchInput from '@Components/common/FormUI/SearchInput';
+// import Navigation from '@Components/Navigation';
 import { Button } from '@Components/RadixComponents/Button';
 import SubscriptionTable from '@Components/Subscription/Table/SubscriptionTable';
-import { ChangeEvent, useState } from 'react';
+// import { ChangeEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Subscription() {
-  const [searchValue, setSearchValue] = useState('');
+  // const [searchValue, setSearchValue] = useState('');
   const navigate = useNavigate();
-  const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(event.target.value);
-  };
+  // const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
+  //   setSearchValue(event.target.value);
+  // };
   return (
     <div className="flex w-full  flex-col  gap-4">
-      <Navigation headerName="Subscription Package">
-        <div className="flex w-full items-end justify-between  gap-4">
-          <SearchInput
-            className="h-10 w-56 rounded-lg bg-gray-100 px-4 "
-            placeholder="Search"
-            inputValue={searchValue}
-            onChange={e => handleSearchChange(e)}
-          />
-        </div>
-      </Navigation>
       <div className="flex h-full w-full flex-col items-center   gap-4  px-10">
         <div className="flex h-10 w-full items-center border">
           Breadcrumb section
