@@ -116,10 +116,10 @@ const SubscriptionTable = () => {
     <div
       className={`sm:w-[20rem] md:w-[30rem]   lg:w-full ${isAddMember ? 'py-[4.5rem]' : ''}`}
     >
-      <Table className="w-full">
+      <Table className="w-full ">
         <TableHeader>
-          <TableRow className="h-8">
-            <TableHead className="w-[5%] text-center !text-xs font-bold text-gray-500">
+          <TableRow className="h-8 ">
+            <TableHead className="w-[5%] text-center !text-xs font-bold text-gray-500 ">
               S.N.
             </TableHead>
             <TableHead className="w-[20%] text-center !text-xs font-bold text-gray-500">
@@ -149,22 +149,24 @@ const SubscriptionTable = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ delay: index * 0.05 }}
-              className="overflow-x-auto"
+              className="overflow-x-auto "
             >
-              <TableCell className="w-[5%] text-center">{index + 1}</TableCell>
-              <TableCell className="w-[20%] text-center ">
+              <TableCell className="w-[5%] text-center dark:text-white ">
+                {index + 1}
+              </TableCell>
+              <TableCell className="w-[20%] text-center dark:text-white ">
                 {subscriptionPackage.name}
               </TableCell>
-              <TableCell className="w-[20%] text-center">
+              <TableCell className="w-[20%] text-center dark:text-white">
                 {subscriptionPackage.MembershipDuration}
               </TableCell>
-              <TableCell className="w-[20%] text-center">
+              <TableCell className="w-[20%] text-center dark:text-white">
                 {subscriptionPackage.packagePrice}
               </TableCell>
-              <TableCell className="w-[10%] text-center">
+              <TableCell className="w-[10%] text-center dark:text-white">
                 {subscriptionPackage.discountPrice}
               </TableCell>
-              <TableCell className="w-[15%] text-center">
+              <TableCell className="w-[15%] text-center dark:text-white">
                 {subscriptionPackage.totalPrice}
               </TableCell>
               <TableCell className="w-[5%] text-center">
