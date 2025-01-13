@@ -1,35 +1,22 @@
-import SearchInput from '@Components/common/FormUI/SearchInput';
+// import SearchInput from '@Components/common/FormUI/SearchInput';
 import MembersTable from '@Components/Membership/MembersTable/MembersTable';
-import Navigation from '@Components/Navigation';
+// import Navigation from '@Components/Navigation';
 import { Button } from '@Components/RadixComponents/Button';
-import Notifications from '@Views/Notifications';
+// import Notifications from '@Views/Notifications';
 
-import { ChangeEvent, useState } from 'react';
+// import { ChangeEvent} from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Membership() {
-  const [searchValue, setSearchValue] = useState('');
+  // const [searchValue, setSearchValue] = useState('');
   const navigate = useNavigate();
 
-  const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(event.target.value);
-  };
+  // const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
+  //   setSearchValue(event.target.value);
+  // };
 
   return (
     <div className="flex h-full w-full flex-col gap-4">
-      <Navigation headerName="Membership List">
-        <div className="relative flex w-full items-center gap-20">
-          <SearchInput
-            className="h-10 w-56 rounded-lg bg-gray-100 px-4"
-            placeholder="Search"
-            inputValue={searchValue}
-            onChange={e => handleSearchChange(e)}
-          />
-          {/* Popover for Notifications */}
-          <Notifications />;
-        </div>
-      </Navigation>
-
       <div className="flex h-full w-full flex-col gap-4 rounded-2xl px-10">
         <div className="flex h-10 w-full items-center border">
           Breadcrumb section
