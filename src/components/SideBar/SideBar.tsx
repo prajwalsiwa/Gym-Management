@@ -7,8 +7,8 @@ export default function SideBar() {
   );
 
   return (
-    <div className="h-full w-72 bg-white  shadow-2xl">
-      <div className=" flex h-28 items-center   pl-12">
+    <div className="h-full w-72 bg-white shadow-2xl  dark:bg-grey-900 dark:text-white">
+      <div className=" flex h-24 items-center   pl-12">
         <div>
           <span className="text-xl font-extrabold">HORIZON</span>{' '}
           <span className="text-xl font-medium"> GYM</span>

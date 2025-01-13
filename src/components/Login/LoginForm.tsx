@@ -2,19 +2,33 @@ import Icon from '@Components/common/Icon';
 import { Button } from '@Components/RadixComponents/Button';
 import googleIcon from '@Assets/images/google.png';
 import { Input, Label } from '@Components/common/FormUI';
+import useLogin from '@Services/authApi';
+import { useForm } from 'react-hook-form';
+
+interface LoginFormValues {
+  username: string;
+  password: string;
+}
 
 function LoginForm() {
+  const { mutate: login, isLoading, isError } = useLogin();
+  const { register, handleSubmit } = useForm<LoginFormValues>();
+
+  const onSubmit = (data: LoginFormValues) => {
+    login(data);
+  };
+
   return (
-    <div className="flex h-full w-full flex-col items-center   justify-center   ">
-      <div className="flex  flex-col items-center justify-center gap-10 sm:w-[28rem]">
-        <div className="flex h-fit w-full gap-2   sm:w-[28rem] md:w-[28rem]">
+    <div className="flex h-full w-full flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center gap-10 sm:w-[28rem]">
+        <div className="flex h-fit w-full gap-2 sm:w-[28rem] md:w-[28rem]">
           <Icon
             className="!text-sm !font-bold text-gray-400"
             name="arrow_back_ios"
           />
           <span className="text-md text-gray-400">Back to Dashboard</span>
         </div>
-        <div className="flex h-full w-fit flex-col  gap-8 sm:w-[28rem]">
+        <div className="flex h-full w-fit flex-col gap-8 sm:w-[28rem]">
           <div>
             <h2 className="text-xl md:text-2xl">Sign In</h2>
             <span className="text-md text-gray-400">
@@ -32,7 +46,10 @@ function LoginForm() {
             <span className="px-4 text-lg text-gray-500">or</span>
             <hr className="w-full border-gray-300" />
           </div>
-          <form className="flex w-full flex-col">
+          <form
+            className="flex w-full flex-col"
+            onSubmit={handleSubmit(onSubmit)}
+          >
             <div className="input-section flex w-full flex-col gap-8">
               <div className="flex w-full flex-col gap-2">
                 <Label>
@@ -40,8 +57,9 @@ function LoginForm() {
                 </Label>
                 <Input
                   type="text"
-                  className="w-full  rounded-lg border"
+                  className="w-full rounded-lg border"
                   placeholder="Prajwal Siwa"
+                  {...register('username', { required: true })}
                 />
               </div>
               <div className="flex w-full flex-col gap-2">
@@ -52,6 +70,7 @@ function LoginForm() {
                   type="password"
                   className="w-full rounded-lg border"
                   placeholder="Min. 6 characters"
+                  {...register('password', { required: true })}
                 />
               </div>
             </div>
@@ -69,9 +88,13 @@ function LoginForm() {
             <Button
               type="submit"
               className="h-12 rounded-lg bg-blue-700 hover:bg-blue-800"
+              disabled={isLoading}
             >
-              <span className="text-md leading-10 tracking-wider">Sign In</span>
+              <span className="text-md leading-10 tracking-wider">
+                {isLoading ? 'Signing in...' : 'Sign In'}
+              </span>
             </Button>
+            {isError && <p className="mt-2 text-red-500">Login failed:</p>}
             <div className="mt-4 flex w-full gap-2">
               <div className="flex items-center gap-2">
                 <Input type="checkbox" />
