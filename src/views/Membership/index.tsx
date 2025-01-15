@@ -17,22 +17,19 @@ function Membership() {
 
   return (
     <div className="flex h-full w-full flex-col gap-4">
-      <div className="flex h-full w-full flex-col gap-4 rounded-2xl px-10">
-        <div className="flex h-10 w-full items-center border">
-          Breadcrumb section
-        </div>
+      <div className="flex h-full w-full flex-col gap-4 rounded-2xl ">
         <div className="membership-header flex w-full items-center justify-between">
           <h4 className="w-full"> Members</h4>
           <div className="add-section flex justify-end gap-4">
             <Button
-              className="!text-md h-10 w-40 border border-teal-600 bg-white tracking-wide text-teal-600 hover:bg-teal-100"
+              className="!text-md h-10 w-40 border border-grey-600 bg-white tracking-wide text-grey-600 hover:bg-grey-100"
               iconClassname="!text-icon-md !font_semibold"
               leftIcon="download"
             >
               Download
             </Button>
             <Button
-              className="h-10 w-40 bg-teal-500 hover:bg-teal-600"
+              className="h-10 w-40 bg-grey-600 hover:bg-grey-700"
               iconClassname="!text-icon-md !font_semibold"
               leftIcon="add"
               onClick={() => navigate('/add-membership')}
