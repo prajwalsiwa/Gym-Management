@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { initDomToCode } from 'dom-to-code';
 import { ToastContainer } from 'react-toastify';
 import { useTypedDispatch, useTypedSelector } from '@Store/hooks';
@@ -23,8 +23,10 @@ import Switch from '@Components/common/Switch';
 import { Label } from '@Components/common/FormUI';
 import { useState } from 'react';
 import Icon from '@Components/common/Icon';
+import BreadCrumb from '@Components/common/BreadCrumb';
 
 export default function App() {
+  const navigate = useNavigate();
   const { pathname } = useLocation();
   const [isChecked, setIsChecked] = useState(false);
   const dispatch = useTypedDispatch();
@@ -75,25 +77,33 @@ export default function App() {
         className={`${hideSideBar ? 'ml-0  h-screen w-screen overflow-hidden' : `ml-0 flex h-screen w-screen flex-col overflow-hidden dark:border-grey-200 dark:bg-grey-900 dark:text-white`}`}
       >
         <div
-          className="flex w-full items-center justify-end gap-4 space-x-2 border-b  py-4 pr-4 dark:border-b-grey-700 dark:bg-grey-900  dark:text-white"
+          className="flex w-full items-center justify-between  gap-4 space-x-2 border-b  py-4 pr-4 dark:border-b-grey-700 dark:bg-grey-900  dark:text-white"
           style={{ overflow: 'visible' }}
         >
-          <div className="flex items-center gap-2">
-            <Switch
-              checked={isChecked}
-              className=" rounded-full"
-              onCheckedChange={toggleDarkMode}
-              id="airplane-mode"
-            />
-            <Label htmlFor="airplane-mode" className="text-gray-100">
-              Dark Mode
-            </Label>
+          <div className=" flex items-center   pl-12">
+            <button type="button" onClick={() => navigate('/dashboard')}>
+              <span className="text-xl font-extrabold">HORIZON</span>{' '}
+              <span className="text-xl font-medium"> GYM</span>
+            </button>
           </div>
-          <div className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-800 dark:border-gray-200 ">
-            <Icon name="notifications" className="dark:text-white" />
-          </div>
-          <div className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-800 dark:border-gray-200">
-            PS
+          <div className="flex gap-8">
+            <div className="flex items-center gap-2">
+              <Switch
+                checked={isChecked}
+                className=" rounded-full"
+                onCheckedChange={toggleDarkMode}
+                id="airplane-mode"
+              />
+              <Label htmlFor="airplane-mode" className="text-gray-900">
+                Dark Mode
+              </Label>
+            </div>
+            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-800 dark:border-gray-200 ">
+              <Icon name="notifications" className="dark:text-white" />
+            </div>
+            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-800 dark:border-gray-200">
+              PS
+            </div>
           </div>
         </div>
         <ToastContainer />
@@ -117,7 +127,8 @@ export default function App() {
           >
             {getPromptDialogContent(promptDialogContent)?.content}
           </PromptDialog>
-          <div className="h-full w-full dark:bg-grey-900 ">
+          <div className="h-full w-full px-10 pt-8 dark:bg-grey-900 ">
+            {!pathname.includes('dashboard') && <BreadCrumb />}
             {generateRoutes({
               routes:
                 process.env.NODE_ENV !== 'production'

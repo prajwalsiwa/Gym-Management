@@ -8,13 +8,6 @@ export default function SideBar() {
 
   return (
     <div className="h-full w-72 bg-white shadow-2xl  dark:bg-grey-900 dark:text-white">
-      <div className=" flex h-24 items-center   pl-12">
-        <div>
-          <span className="text-xl font-extrabold">HORIZON</span>{' '}
-          <span className="text-xl font-medium"> GYM</span>
-        </div>
-      </div>
-      <hr className="ml-4 w-60 border-t-2 border-gray-300" />
       <div className="flex flex-col gap-6   pl-2 pt-10 ">
         {sidebarList.map(item => (
           <SideBarItem
