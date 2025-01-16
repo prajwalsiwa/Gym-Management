@@ -49,7 +49,6 @@ export default function App() {
     '/sign-up',
     '/forgot-password',
     '/public-page',
-    '/dashboard',
   ];
 
   const hideSideBar = routesWithoutSidebar.some(url => pathname.includes(url));
@@ -81,7 +80,7 @@ export default function App() {
           style={{ overflow: 'visible' }}
         >
           <div className=" flex items-center   pl-12">
-            <button type="button" onClick={() => navigate('/dashboard')}>
+            <button type="button" onClick={() => navigate('/')}>
               <span className="text-xl font-extrabold">HORIZON</span>{' '}
               <span className="text-xl font-medium"> GYM</span>
             </button>
@@ -127,8 +126,10 @@ export default function App() {
           >
             {getPromptDialogContent(promptDialogContent)?.content}
           </PromptDialog>
-          <div className="h-full w-full px-10 pt-8 dark:bg-grey-900 ">
-            {!pathname.includes('dashboard') && <BreadCrumb />}
+          <div
+            className={`h-full w-full px-10  dark:bg-grey-900 ${pathname.includes('login') ? 'pt-0' : 'pt-8'} `}
+          >
+            {pathname !== '/' || (pathname.includes('login') && <BreadCrumb />)}
             {generateRoutes({
               routes:
                 process.env.NODE_ENV !== 'production'
