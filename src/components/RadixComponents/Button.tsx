@@ -14,10 +14,10 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-primary-400 text-white hover:shadow-top hover:shadow-primary-400',
+          'bg-grey-800 hover:bg-grey-900 text-white hover:shadow-top hover:shadow-grey-400',
         destructive:
           'bg-red-500 text-white hover:shadow-top hover:shadow-red-500',
-        outline: `border text-primary-400 border-primary-400 border-input 
+        outline: `border text-grey-800 border-grey-400 border-input 
         hover:shadow-top bg-white`,
         secondary:
           'bg-white text-primary-400 border border-primary-400 hover:shadow-top',
