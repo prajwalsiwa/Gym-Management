@@ -36,7 +36,7 @@ export default function ChartHeader({
   }, [data, chartTitle]);
 
   return (
-    <div className="relative flex items-start justify-between">
+    <div className="relative flex w-full items-start justify-between">
       <h3 className="relative pr-5 text-lg font-bold text-grey-800">
         {chartTitle}
       </h3>
