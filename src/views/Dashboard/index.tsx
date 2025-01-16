@@ -38,7 +38,7 @@ export default function Dashboard() {
     <div className="flex  h-full w-full ">
       <div className="flex h-fit w-full gap-6">
         {/* <Navbar /> */}
-        <div className=" flex flex-col justify-between rounded-lg border p-4">
+        <div className=" flex w-[25%] flex-col justify-between rounded-lg border p-4">
           <div className="flex flex-col gap-2">
             <span className="flex-wrap text-2xl leading-7 ">
               Manage your Fitness business
@@ -56,7 +56,7 @@ export default function Dashboard() {
             </Button>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4 ">
+        <div className="grid w-[30%] grid-cols-2 gap-4 ">
           {cardData.map(card => (
             <Card
               key={card.id}
@@ -67,7 +67,7 @@ export default function Dashboard() {
             />
           ))}
         </div>
-        <div className="w-1/2 rounded-lg border p-2">
+        <div className="w-[45%] rounded-lg border p-2">
           <RevenueChart />
         </div>
       </div>
