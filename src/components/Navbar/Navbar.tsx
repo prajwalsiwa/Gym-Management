@@ -5,7 +5,7 @@ const navList = [
   {
     id: 1,
     name: 'Home',
-    link: '/dashboard',
+    link: '/',
   },
   {
     id: 2,
