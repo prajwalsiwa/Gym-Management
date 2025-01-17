@@ -10,7 +10,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ icon, title, count, subtitle }) => {
   return (
-    <div className="flex w-full flex-col gap-4 rounded-lg border border-gray-200 p-4">
+    <div className="flex  min-w-32 flex-col gap-4 rounded-lg border border-gray-200 p-4">
       <div className="flex items-center gap-2">
         <Icon name={icon} />
         <span className="font-semibold">{title}</span>
