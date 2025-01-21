@@ -77,6 +77,7 @@ export default function CustomBarChart({
 }: IChartProps) {
   // const keys = Object.keys(data.length > 0 ? data[0] : {});
   const dataObject = data.length > 0 ? data[0] : {};
+  const isDark = document.body.classList.contains('dark');
 
   const { name, ...datax } = dataObject;
   const keys = Object.keys(datax);
@@ -101,7 +102,7 @@ export default function CustomBarChart({
           dataKey="name"
           style={{
             fontSize: '14px',
-            color: '#212121',
+            color: isDark ? '#ffffff' : '#212121',
           }}
           tickLine={false}
           tick={<CustomizedLabel />}
@@ -109,12 +110,12 @@ export default function CustomBarChart({
         />
 
         <YAxis
+          className="text-gray-900 dark:text-gray-100"
           yAxisId="left"
           style={{
             fontSize: '12px',
             color: '#212121',
           }}
-          tickLine={false}
         />
         {keys.length > 1 && <Legend />}
 

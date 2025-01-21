@@ -17,7 +17,7 @@ export default function HorizontalBarLabel({
         style={{ width: `${width}%` }}
       />
       <div className="content absolute  top-1/2 -translate-y-1/2 translate-x-2">
-        <div className="cover flex h-full items-center justify-center gap-4">
+        <div className="cover flex h-full  items-center justify-center gap-4">
           <p className="value text-sm font-semibold text-grey-800">{value}</p>
           <p className="label line-clamp-1 text-sm text-grey-800">{label}</p>
         </div>

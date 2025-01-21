@@ -36,7 +36,7 @@ export default function CustomDonutChart({ data, fills }: IChartProps) {
           labelLine={false}
           fill="#8884d8"
           dataKey="value"
-          outerRadius="90%"
+          outerRadius="100%"
           innerRadius={52}
           paddingAngle={0}
         >
