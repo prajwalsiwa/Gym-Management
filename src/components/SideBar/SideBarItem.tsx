@@ -34,10 +34,10 @@ function SideBarItem({
         >
           <Icon
             name={iconName}
-            className={`${isActive ? '!text-2xl !font-medium text-grey-900' : '!text-slate-500'}`}
+            className={`${isActive ? '!text-2xl !font-medium text-grey-900' : '!text-slate-500 '}`}
           />
           <div
-            className={`flex w-full items-start  ${isActive ? 'rounded-sm border-r-4 border-r-grey-800 text-lg font-medium tracking-wide text-black dark:text-grey-500' : 'border-none text-lg text-slate-500 dark:text-white'}`}
+            className={`flex w-full items-start  ${isActive ? 'rounded-sm border-r-4 border-r-grey-800 text-lg font-medium tracking-wide text-black dark:border-r-grey-200 dark:text-grey-500' : 'border-none text-lg text-slate-500 dark:text-white'}`}
           >
             {linkName}
           </div>

@@ -17,7 +17,7 @@ export default function Icon({
       tabIndex={0}
       onKeyUp={() => {}}
       onClick={onClick}
-      className={`text-icon-sm lg:text-2xl ${className} ${iconSymbolType}`}
+      className={`text-icon-sm dark:text-grey-200 lg:text-2xl ${className} ${iconSymbolType}`}
     >
       {name}
     </i>

@@ -1,6 +1,10 @@
+import ChartHeader from '@Components/common/Charts/ChartHeader';
 import Card from '@Components/DashBoard/Card';
 import RevenueChart from '@Components/DashBoard/RevenueChart';
 import { Button } from '@Components/RadixComponents/Button';
+import { useRef } from 'react';
+
+import CustomDonutChart from '@Components/common/Charts/DonutChart';
 
 const cardData = [
   {
@@ -33,11 +37,18 @@ const cardData = [
   },
 ];
 
+const data = [
+  { name: 'Outdoor', value: 50 },
+  { name: 'Indoor', value: 30 },
+];
+
 export default function Dashboard() {
+  const ref = useRef();
+  const isDark = document.body.classList.contains('dark');
+
   return (
-    <div className="flex  h-full w-full ">
-      <div className="flex h-fit w-full gap-6">
-        {/* <Navbar /> */}
+    <div className="flex h-full w-full flex-col  items-center gap-6 ">
+      <div className="flex h-fit w-full  gap-6">
         <div className=" flex w-[25%] flex-col justify-between rounded-lg border p-4">
           <div className="flex flex-col gap-2">
             <span className="flex-wrap text-2xl leading-7 ">
@@ -70,6 +81,13 @@ export default function Dashboard() {
         <div className="w-[45%] rounded-lg border p-2">
           <RevenueChart />
         </div>
+      </div>
+      <div className="flex h-fit w-[30rem] flex-col items-center justify-center rounded-lg border p-4 ">
+        <ChartHeader chartTitle="Gym Capacity" downloadComponentRef={ref} />
+        <CustomDonutChart
+          data={data}
+          fills={isDark ? ['#e5e7eb', '#d1d5db'] : ['#1f2937', '#374151']}
+        />
       </div>
     </div>
   );

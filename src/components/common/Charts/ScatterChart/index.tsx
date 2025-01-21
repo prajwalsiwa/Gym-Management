@@ -38,7 +38,7 @@ export default function ScatterChartComponent({
             fontSize: '13.4px',
             color: '#484848',
           }}
-          name="House Floor"
+          name=""
           tickLine={false}
         />
         <YAxis
@@ -48,7 +48,7 @@ export default function ScatterChartComponent({
             fontSize: '12px',
             color: '#484848',
           }}
-          name="Number of House"
+          name=""
           tickLine={false}
         />
         {/* <ZAxis

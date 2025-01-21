@@ -4,11 +4,13 @@ import { useRef } from 'react';
 
 function RevenueChart() {
   const ref = useRef();
+  const isDark = document.body.classList.contains('dark');
+
   return (
     <div className=" w-full ">
       <ChartHeader chartTitle="Revenue Analytics" downloadComponentRef={ref} />
       <CustomBarChart
-        fills={['#1f2937', '#374151']}
+        fills={isDark ? ['#ffffff'] : ['#1f2937', '#374151']}
         data={[
           { name: 'Jan', sales: 4000 },
           { name: 'Feb', sales: 3000 },
