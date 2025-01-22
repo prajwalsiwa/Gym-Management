@@ -7,7 +7,7 @@ function LogIn() {
       <div className="flex h-full w-full items-center justify-center">
         <LoginForm />
       </div>
-      <div className="flex h-full w-0 items-center justify-center bg-blue-700 lg:w-full ">
+      <div className="flex h-full w-0 items-center justify-center bg-grey-700 lg:w-full ">
         <h1 className="font-bold text-white">HORIZON GYM</h1>
       </div>
     </div>
