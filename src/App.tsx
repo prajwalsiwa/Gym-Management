@@ -107,7 +107,7 @@ export default function App() {
         </div>
         <ToastContainer />
         <div className="flex h-full ">
-          {!hideSideBar && <SideBar />}
+          <div className=" ">{!hideSideBar && <SideBar />}</div>
 
           <Modal
             show={showModal}
@@ -127,7 +127,7 @@ export default function App() {
             {getPromptDialogContent(promptDialogContent)?.content}
           </PromptDialog>
           <div
-            className={`h-full w-full px-10  dark:bg-grey-900 ${pathname.includes('login') ? 'pt-0' : 'pt-8'} `}
+            className={`h-full w-full px-8  dark:bg-grey-900 ${pathname.includes('login') ? 'pt-0' : 'pt-8'} `}
           >
             {pathname !== '/' || (pathname.includes('login') && <BreadCrumb />)}
             {generateRoutes({
