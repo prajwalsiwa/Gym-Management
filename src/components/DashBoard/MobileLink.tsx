@@ -12,10 +12,11 @@ function MobileLink() {
           Manage the business whenever and wherever you are
         </span>
       </div>
-      <div className="flex flex-col gap-2 bg-sky-600">
+      <div className="flex flex-col items-center justify-center gap-2">
         <Button className="w-full bg-white text-black hover:bg-grey-200">
           Download Now
         </Button>
+        <span className="text-white">Not available right now</span>
       </div>
     </div>
   );
