@@ -23,7 +23,7 @@ function TrainerCard() {
           <div className="rounded-md border p-1 text-sm">Motivation</div>
         </div>
       </div>
-      <div className="h-[10rem] w-[10rem] overflow-hidden rounded-lg">
+      <div className="h-[9rem] w-[10rem] overflow-hidden rounded-lg">
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3blk49J3qSVZ0PqeYVZBDn-o6V1Z1T_-BMw&s"
           alt=""
