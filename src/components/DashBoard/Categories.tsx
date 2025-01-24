@@ -3,7 +3,7 @@ import React from 'react';
 
 function Categories() {
   return (
-    <div className="flex w-full flex-col gap-4 rounded-lg border p-4">
+    <div className="flex w-full flex-col gap-4 rounded-lg border p-4 py-5">
       <span className="text-xl font-semibold">Workout Categories</span>
       <div className="grid w-full grid-cols-6 gap-6">
         {/* Gym */}
