@@ -25,7 +25,7 @@ export default function CustomDonutChart({ data, fills }: IChartProps) {
     <ResponsiveContainer
       width="100%"
       height="100%"
-      minHeight={170}
+      minHeight={140}
       maxHeight={190}
     >
       <PieChart>
@@ -36,8 +36,8 @@ export default function CustomDonutChart({ data, fills }: IChartProps) {
           labelLine={false}
           fill="#8884d8"
           dataKey="value"
-          outerRadius="100%"
-          innerRadius={52}
+          outerRadius="95%"
+          innerRadius={38}
           paddingAngle={0}
         >
           {data?.map((_entry: any, index: number) => (

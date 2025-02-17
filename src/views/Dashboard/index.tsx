@@ -43,16 +43,16 @@ export default function Dashboard() {
   const isDark = document.body.classList.contains('dark');
 
   return (
-    <div className="scrollbar flex h-[calc(100vh-8rem)] flex-col gap-6 overflow-y-auto pr-2">
+    <div className=" flex min-h-[calc(100vh-10rem)] flex-col gap-6   p-2">
       {/* Top Section */}
-      <div className="grid grid-cols-12 gap-6">
+      <div className="flex h-[15rem] w-full gap-3 overflow-hidden ">
         {/* Membership Section */}
-        <div className="col-span-12 rounded-lg bg-white p-3 shadow-md dark:bg-grey-900 lg:col-span-3">
+        <div className="col-span-12 rounded-lg bg-white shadow-md dark:bg-grey-900 lg:col-span-3">
           <Membership />
         </div>
 
         {/* Cards Section */}
-        <div className="col-span-12 grid grid-cols-2 gap-4 lg:col-span-4">
+        <div className="col-span-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-6">
           {cardData.map(card => (
             <Card
               key={card.id}
@@ -65,30 +65,30 @@ export default function Dashboard() {
         </div>
 
         {/* Revenue Chart Section */}
-        <div className="col-span-12 rounded-lg border border-grey-200 bg-white p-4 shadow-md dark:border dark:border-white dark:bg-grey-900 lg:col-span-5">
+        <div className="xxxl:border xxxl:border-red-800 flex flex-grow rounded-lg border border-grey-200 bg-white p-3 pb-8 shadow-md dark:border dark:border-white dark:bg-grey-900 lg:col-span-3">
           <RevenueChart />
         </div>
       </div>
 
       {/* Bottom Section */}
-      <div className="flex gap-6">
+      <div className="flex gap-3 lg:flex-row">
         {/* Gym Classes Section */}
-        <div className="w-[24%] rounded-lg bg-white  shadow-md dark:bg-grey-900">
+        <div className="h-full flex-1 rounded-lg  dark:bg-grey-900">
           <GymClass />
         </div>
 
         {/* Main Content Section */}
-        <div className="w-[75%] space-y-6">
+        <div className="flex flex-col gap-3">
           {/* Trainers and Donut Chart Section */}
-          <div className="grid grid-cols-12 gap-6">
+          <div className="flex gap-6 ">
             {/* Trainers */}
-            <div className="col-span-12 grid grid-cols-2 gap-4 lg:col-span-8">
+            <div className="  grid h-[23vh] grid-cols-2 gap-4 overflow-hidden  ">
               <TrainerCard />
               <TrainerCard />
             </div>
 
             {/* Donut Chart */}
-            <div className="col-span-12 flex flex-col items-center justify-center rounded-lg bg-white p-6 shadow-md dark:border dark:border-white dark:bg-grey-900 lg:col-span-4">
+            <div className=" flex h-[23vh] w-[25rem]  flex-col  items-center  justify-center rounded-lg border bg-white p-6 py-10 shadow-md dark:border dark:border-white dark:bg-grey-900 lg:col-span-4">
               <ChartHeader
                 chartTitle="Gym Capacity"
                 downloadComponentRef={ref}
@@ -101,7 +101,7 @@ export default function Dashboard() {
           </div>
 
           {/* Categories Section */}
-          <div className="rounded-lg bg-white  shadow-md dark:bg-grey-900">
+          <div className="h-[23vh] rounded-lg bg-white shadow-md dark:bg-grey-900">
             <Categories />
           </div>
         </div>
