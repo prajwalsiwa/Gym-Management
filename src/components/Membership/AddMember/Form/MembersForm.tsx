@@ -20,7 +20,7 @@ function MembersForm() {
         </div>
       </div>
       <RoundedContainer className="relative z-10 flex  w-full flex-col justify-between border    bg-[#F2F2F2]  pt-6  ">
-        <div className="scrollbar  flex w-full flex-col gap-4 overflow-y-auto  px-4  lg:h-[calc(100vh-15rem)] 2xl:h-[32rem]">
+        <div className="scrollbar  flex w-full flex-col gap-4 overflow-y-auto   px-4 lg:h-[calc(100vh-15rem)] 2xl:h-[57vh]">
           <div className="flex w-full flex-wrap gap-2  xl:flex-nowrap">
             <div className="w-full">
               <Label>
