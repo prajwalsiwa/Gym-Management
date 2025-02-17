@@ -127,7 +127,7 @@ export default function App() {
             {getPromptDialogContent(promptDialogContent)?.content}
           </PromptDialog>
           <div
-            className={`h-full w-full px-8  dark:bg-grey-900 ${pathname.includes('login') ? 'pt-0' : 'pt-8'} `}
+            className={`h-full w-full px-4  dark:bg-grey-900 ${pathname.includes('login') ? 'pt-0' : 'pt-4'} `}
           >
             {pathname !== '/' || (pathname.includes('login') && <BreadCrumb />)}
             {generateRoutes({

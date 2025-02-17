@@ -3,7 +3,7 @@ import React from 'react';
 
 function Membership() {
   return (
-    <div className=" flex h-full w-full  flex-col gap-12 rounded-lg border p-4">
+    <div className=" flex h-full w-[20rem]  flex-col gap-12 rounded-lg border p-4">
       <div className="flex flex-col gap-2">
         <span className="flex-wrap text-2xl leading-7 ">
           Manage your Fitness business

@@ -26,11 +26,11 @@ function GymClass() {
   };
 
   return (
-    <div className="flex flex-col gap-2 rounded-lg border p-4 shadow-lg">
-      <h2 className="text-2xl font-bold  text-gray-800 dark:text-white">
+    <div className="flex h-[48vh] w-[20rem] flex-col gap-2 rounded-lg border p-2 pb-4 shadow-lg">
+      <h2 className="pl-3 text-xl font-bold  text-gray-800 dark:text-white xl:text-xl">
         Available Gym Classes
       </h2>
-      <div className="flex flex-col gap-4 ">
+      <div className="scrollbar flex  min-h-[12rem] flex-col gap-2 overflow-auto px-2 ">
         {gymClasses.map(gymClass => (
           <div
             key={gymClass.id}
