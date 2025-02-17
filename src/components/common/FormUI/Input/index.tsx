@@ -11,7 +11,7 @@ const Input = React.forwardRef<HTMLInputElement, IInputProps>(
         type={type}
         placeholder={placeholder || 'Search'}
         className={cn(
-          `flex h-11 border-b-2 border-grey-300 bg-transparent
+          `flex h-10 border-b-2 border-grey-300 bg-transparent
             px-3 text-sm text-grey-800 file:font-medium placeholder:text-grey-400
              hover:border-primary-400 focus:border-primary-400 focus:bg-transparent
             focus:outline-none disabled:cursor-not-allowed disabled:opacity-50`,
