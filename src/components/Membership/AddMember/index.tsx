@@ -3,7 +3,7 @@ import MembersForm from './Form/MembersForm';
 
 function AddMember() {
   return (
-    <div className="flex w-full flex-col gap-4 px-12 py-8">
+    <div className="flex w-full flex-col gap-4  ">
       {/* <div className="flex h-10 w-full items-center border">
         Breadcrumb section
       </div> */}
