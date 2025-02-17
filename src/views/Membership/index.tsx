@@ -29,7 +29,7 @@ function Membership() {
               Download
             </Button>
             <Button
-              className="h-10 w-40 bg-grey-600 hover:bg-grey-700"
+              className="h-10 w-40 bg-grey-700 hover:bg-grey-800"
               iconClassname="!text-icon-md !font_semibold"
               leftIcon="add"
               onClick={() => navigate('/add-membership')}
