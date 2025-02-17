@@ -20,13 +20,13 @@ function SubscriptionForm() {
   };
 
   return (
-    <div className="flex h-full w-full flex-col items-center gap-2 ">
+    <div className="flex h-[85vh] w-full  flex-col items-center gap-2 overflow-hidden ">
       <div className="flex w-full flex-col">
         <h2 className="text-xl md:text-2xl">Subscription Package</h2>
         <span className="text-md text-gray-400">Enter package details!</span>
       </div>
-      <RoundedContainer className="relative z-10 flex w-full  flex-col justify-between  gap-10  border  bg-[#F2F2F2]    px-4  pt-6 ">
-        <div className="scrollbar  flex w-full flex-col gap-4 overflow-y-auto   px-2  lg:h-[calc(100vh-15rem)] 2xl:h-fit ">
+      <RoundedContainer className="relative z-10 flex w-full  flex-col justify-between  gap-10  border  bg-[#F2F2F2]    px-3  pt-3 ">
+        <div className="scrollbar  2xl:[calc(100vh-20rem)] flex w-full flex-col gap-4   overflow-y-auto  px-2 lg:h-[calc(100vh-22rem)] ">
           <div className="flex w-full gap-2">
             <div className="w-full">
               <Label>
@@ -39,7 +39,7 @@ function SubscriptionForm() {
               />
             </div>
           </div>
-          <div className="flex w-full flex-col gap-2">
+          <div className="flex w-full flex-col ">
             <div className="flex w-full flex-col">
               <Label>
                 Membership Duration
