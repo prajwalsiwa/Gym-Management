@@ -19,8 +19,8 @@ function LoginForm() {
   };
 
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center">
-      <div className="flex flex-col items-center justify-center gap-10 sm:w-[28rem]">
+    <div className="flex h-full w-full flex-col items-center justify-center  ">
+      <div className="flex h-[85vh] flex-col items-center justify-center gap-4 overflow-hidden sm:w-[28rem]">
         <div className="flex h-fit w-full gap-2 sm:w-[28rem] md:w-[28rem]">
           <Icon
             className="!text-sm !font-bold text-gray-400"
@@ -41,7 +41,7 @@ function LoginForm() {
               Sign in with Google
             </span>
           </Button>
-          <div className="my-4 flex w-full items-center justify-center">
+          <div className=" flex w-full items-center justify-center">
             <hr className="w-full border-gray-300" />
             <span className="px-4 text-lg text-gray-500">or</span>
             <hr className="w-full border-gray-300" />
@@ -50,7 +50,7 @@ function LoginForm() {
             className="flex w-full flex-col"
             onSubmit={handleSubmit(onSubmit)}
           >
-            <div className="input-section flex w-full flex-col gap-8">
+            <div className="input-section flex w-full flex-col gap-2">
               <div className="flex w-full flex-col gap-2">
                 <Label>
                   Username<span className="text-lg text-blue-700">*</span>
