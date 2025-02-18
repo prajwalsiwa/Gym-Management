@@ -101,7 +101,7 @@ export default function Dashboard() {
           </div>
 
           {/* Categories Section */}
-          <div className="h-[23vh] rounded-lg bg-white shadow-md dark:bg-grey-900">
+          <div className="h-[23.8vh] rounded-lg bg-white shadow-md dark:bg-grey-900">
             <Categories />
           </div>
         </div>
