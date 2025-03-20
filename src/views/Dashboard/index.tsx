@@ -43,7 +43,7 @@ export default function Dashboard() {
   const isDark = document.body.classList.contains('dark');
 
   return (
-    <div className=" flex min-h-[calc(100vh-10rem)] flex-col items-center justify-center gap-6   p-2">
+    <div className=" flex min-h-[calc(100vh-10rem)]  flex-col items-center justify-center gap-3   p-2">
       {/* Top Section */}
       <div className="flex h-[15rem] w-full gap-3 overflow-hidden ">
         {/* Membership Section */}

@@ -26,7 +26,7 @@ function GymClass() {
   };
 
   return (
-    <div className="flex h-[48vh] w-[20rem] flex-col gap-2 rounded-lg border p-2 pb-4 shadow-lg">
+    <div className="flex h-[48vh] w-[20rem] flex-col gap-2 rounded-lg border bg-white p-2 pb-4 shadow-lg">
       <h2 className="pl-3 text-xl font-bold  text-gray-800 dark:text-white xl:text-xl">
         Available Gym Classes
       </h2>

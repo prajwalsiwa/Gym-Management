@@ -7,7 +7,7 @@ export default function SideBar() {
   );
 
   return (
-    <div className="h-full w-[15rem]  border  bg-white shadow-2xl dark:border-r dark:border-r-grey-600  dark:bg-grey-900 dark:text-white">
+    <div className="h-full w-[15rem] border-r bg-white   shadow-lg dark:border-r dark:border-r-grey-600  dark:bg-grey-900 dark:text-white">
       <div className="flex w-[14rem] flex-col gap-6   py-16 pl-2 ">
         {sidebarList.map(item => (
           <SideBarItem
