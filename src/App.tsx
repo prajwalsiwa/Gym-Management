@@ -129,7 +129,7 @@ export default function App() {
                     PS
                   </div>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="clear-star mr-12 mt-4 w-[10rem]   border border-gray-400 bg-gray-100   py-2">
+                <DropdownMenuContent className="clear-star mr-12 mt-3 w-[10rem] rounded-md   border border-gray-400 bg-gray-100   py-2">
                   <DropdownMenuItem className="flex h-full w-full cursor-pointer items-center  gap-2 px-4 py-2 text-white outline-none hover:border-none  hover:bg-gray-200 ">
                     <Icon name="person" className="text-gray-700" />{' '}
                     <span className="font-medium text-gray-700">Profile</span>
