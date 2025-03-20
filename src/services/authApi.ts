@@ -11,14 +11,10 @@ interface LoginPayload {
 
 // Updated login function to include credentials in the headers of the request
 const login = async (credentials: LoginPayload) => {
-  console.log(credentials);
-  const { data } = await api.post(
-    'https://api.freeapi.app/api/v1/users/login',
-    {
-      username: credentials.username,
-      password: credentials.password,
-    },
-  );
+  const { data } = await api.post('https://dummyjson.com/auth/login', {
+    username: credentials.username,
+    password: credentials.password,
+  });
   return data;
 };
 
