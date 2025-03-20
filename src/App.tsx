@@ -24,8 +24,16 @@ import { Label } from '@Components/common/FormUI';
 import { useState } from 'react';
 import Icon from '@Components/common/Icon';
 import BreadCrumb from '@Components/common/BreadCrumb';
+import { DropdownMenu } from '@Components/RadixComponents/DropDownMenu';
+import DropdownOptions from '@Components/RadixComponents/DropdownOptions';
+import {
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@radix-ui/react-dropdown-menu';
 
 export default function App() {
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const [isChecked, setIsChecked] = useState(false);
@@ -67,6 +75,10 @@ export default function App() {
     }, 150);
   };
 
+  const handleSiginButtonClick = () => {
+    setIsOpen(true);
+  };
+
   return (
     <>
       {process.env.NODE_ENV !== 'production' &&
@@ -76,7 +88,7 @@ export default function App() {
         className={`${hideSideBar ? 'ml-0  h-screen w-screen overflow-hidden' : `ml-0 flex h-screen w-screen flex-col overflow-hidden dark:border-grey-200 dark:bg-grey-900 dark:text-white`}`}
       >
         <div
-          className="flex w-full items-center justify-between  gap-4 space-x-2 border-b  py-4 pr-4 dark:border-b-grey-700 dark:bg-grey-900  dark:text-white"
+          className="flex w-full items-center justify-between   gap-4 space-x-2 border-b  py-4 pr-4 dark:border-b-grey-700 dark:bg-grey-900  dark:text-white"
           style={{ overflow: 'visible' }}
         >
           <div className=" flex items-center   pl-12">
@@ -85,7 +97,7 @@ export default function App() {
               <span className="text-xl font-medium"> GYM</span>
             </button>
           </div>
-          <div className="flex gap-8">
+          <div className="flex gap-8 pr-8">
             <div className="flex items-center gap-2">
               <Switch
                 checked={isChecked}
@@ -100,9 +112,29 @@ export default function App() {
             <div className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-800 dark:border-gray-200 ">
               <Icon name="notifications" className="dark:text-white" />
             </div>
-            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-800 dark:border-gray-200">
-              PS
+            <div className="flex h-10 w-10  items-center justify-center rounded-full border border-gray-800 dark:border-gray-200">
+              <button
+                className=""
+                type="button"
+                onClick={handleSiginButtonClick}
+              >
+                <DropdownMenu>
+                  <DropdownMenuTrigger>PS</DropdownMenuTrigger>
+                  <DropdownMenuContent className="clear-star mr-20 mt-4  rounded-md border bg-gray-700  py-2">
+                    <DropdownMenuItem className="flex h-full w-full items-center justify-center gap-2 px-4 py-2 text-white  hover:bg-gray-500 ">
+                      <Icon name="logout" className="" />{' '}
+                      <span className=""> Sign Out </span>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </button>
             </div>
+            {isOpen && (
+              <DropdownOptions
+                options={[{ name: 'logout' }]}
+                data={undefined}
+              />
+            )}
           </div>
         </div>
         <ToastContainer />
@@ -127,7 +159,7 @@ export default function App() {
             {getPromptDialogContent(promptDialogContent)?.content}
           </PromptDialog>
           <div
-            className={`h-full w-full px-10  dark:bg-grey-900 ${pathname.includes('login') ? 'pt-0' : 'pt-4 '} `}
+            className={`h-full w-full px-10 bg-gray-50 dark:bg-grey-900 ${pathname.includes('login') ? 'pt-0' : 'pt-4 '} `}
           >
             {pathname !== '/' || (pathname.includes('login') && <BreadCrumb />)}
             {generateRoutes({
