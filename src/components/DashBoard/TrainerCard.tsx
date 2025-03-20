@@ -1,6 +1,6 @@
 function TrainerCard() {
   return (
-    <div className="flex  h-[23vh]  gap-10 rounded-lg  border p-4 ">
+    <div className="flex  h-[23vh]  gap-10 rounded-lg  border bg-white p-4 ">
       <div className="flex h-full w-full flex-col justify-between">
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-2">
