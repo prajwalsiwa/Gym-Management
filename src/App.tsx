@@ -30,6 +30,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@radix-ui/react-dropdown-menu';
+import { logout } from '@Store/slices/authSlice';
 
 export default function App() {
   const navigate = useNavigate();
@@ -37,6 +38,11 @@ export default function App() {
   const [isChecked, setIsChecked] = useState(false);
   const dispatch = useTypedDispatch();
   const showModal = useTypedSelector(state => state.common.showModal);
+  const isAuthenticated = useTypedSelector(
+    state => state.authSlice.isAuthenticated,
+  );
+  const isDashboard = pathname === '/';
+
   const modalContent = useTypedSelector(state => state.common.modalContent);
   const showPromptDialog = useTypedSelector(
     state => state.common.showPromptDialog,
@@ -106,21 +112,36 @@ export default function App() {
             <div className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-800 dark:border-gray-200 ">
               <Icon name="notifications" className="dark:text-white" />
             </div>
-            <div className="flex h-10 w-10  items-center justify-center rounded-full border border-gray-800 dark:border-gray-200">
-              {/* <button
-                className=""
+            {pathname !== '/login' && !isAuthenticated && (
+              <button
                 type="button"
-                onClick={handleSiginButtonClick}
-              > */}
+                onClick={() => navigate('/login')}
+                className="flex h-10 w-[8rem]  items-center justify-start gap-3 rounded-md  border-none bg-gray-600 pl-3  text-white outline-none hover:bg-gray-700  dark:border-gray-200"
+              >
+                <Icon name="login" />
+                Log in
+              </button>
+            )}
+            {isAuthenticated && isDashboard && (
               <DropdownMenu>
-                <DropdownMenuTrigger>PS</DropdownMenuTrigger>
-                <DropdownMenuContent className="clear-star mr-12 mt-4 w-[10rem] rounded-md  border border-gray-400 bg-gray-100   py-2">
-                  <DropdownMenuItem className="flex h-full w-full items-center  gap-2 px-4 py-2 text-white outline-none hover:border-none  hover:bg-gray-200 ">
+                <DropdownMenuTrigger className="">
+                  <div className="flex h-10 w-10  items-center justify-center rounded-full border border-gray-800 dark:border-gray-200">
+                    PS
+                  </div>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="clear-star mr-12 mt-4 w-[10rem]   border border-gray-400 bg-gray-100   py-2">
+                  <DropdownMenuItem className="flex h-full w-full cursor-pointer items-center  gap-2 px-4 py-2 text-white outline-none hover:border-none  hover:bg-gray-200 ">
                     <Icon name="person" className="text-gray-700" />{' '}
                     <span className="font-medium text-gray-700">Profile</span>
                   </DropdownMenuItem>
                   <hr className="border-top border-top-gray-300" />
-                  <DropdownMenuItem className="flex h-full w-full items-center  gap-2 px-4 py-2 text-white outline-none hover:border-none  hover:bg-gray-200 ">
+                  <DropdownMenuItem
+                    onClick={() => {
+                      dispatch(logout());
+                      navigate('/login');
+                    }}
+                    className="flex h-full w-full cursor-pointer items-center  gap-2 px-4 py-2 text-white outline-none hover:border-none  hover:bg-gray-200 "
+                  >
                     <Icon name="logout" className="text-gray-700" />{' '}
                     <span className="font-medium text-gray-700">
                       {' '}
@@ -129,8 +150,7 @@ export default function App() {
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
-              {/* </button> */}
-            </div>
+            )}
           </div>
         </div>
         <ToastContainer />
