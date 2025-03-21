@@ -1,10 +1,10 @@
 import Icon from '@Components/common/Icon';
 import { Button } from '@Components/RadixComponents/Button';
-// import googleIcon from '@Assets/images/google.png';
 import { Input, Label } from '@Components/common/FormUI';
 import useLogin from '@Services/authApi';
 import { useForm } from 'react-hook-form';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface LoginFormValues {
   username: string;
@@ -12,7 +12,8 @@ interface LoginFormValues {
 }
 
 function LoginForm() {
-  const { mutate: login, isLoading, isError } = useLogin();
+  const { mutate: login, isLoading, isError, isSuccess } = useLogin();
+  const navigate = useNavigate();
   const { register, handleSubmit } = useForm<LoginFormValues>();
   const [isVisible, setIsVisible] = useState(false);
 
@@ -20,10 +21,16 @@ function LoginForm() {
     setIsVisible((prev: boolean) => !prev);
   };
 
+  useEffect(() => {
+    if (isSuccess) {
+      navigate('/');
+    }
+  });
+
   const onSubmit = (data: LoginFormValues) => {
     login({
-      password: data.username,
-      username: data.password,
+      password: data.password,
+      username: data.username,
     });
   };
 
@@ -62,7 +69,9 @@ function LoginForm() {
             <div className="input-section flex w-full flex-col gap-2">
               <div className="flex w-full flex-col gap-2">
                 <Label>
-                  Username<span className="text-lg text-blue-700">*</span>
+                  Username
+                  <span className="text-lg text-blue-700">*</span>
+                  <span className="text-red-600">(auto-filled)</span>
                 </Label>
                 <Input
                   type="text"
@@ -75,11 +84,12 @@ function LoginForm() {
               <div className="relative flex w-full flex-col gap-2">
                 <Label>
                   Password<span className="text-lg text-blue-700">*</span>
+                  <span className="text-red-600">(auto-filled)</span>
                 </Label>
                 <Input
                   type={`${isVisible ? 'text' : 'password'}`}
                   className="w-full rounded-lg border"
-                  value="test@123"
+                  value="emilyspass"
                   placeholder="Min. 6 characters"
                   {...register('password', { required: true })}
                 />
@@ -111,6 +121,10 @@ function LoginForm() {
                 {isLoading ? 'Signing in...' : 'Sign In'}
               </span>
             </Button>
+            <span className="text-red-600">
+              No need to type! Click `Login` to try it out with pre-filled
+              credentials.
+            </span>
             {isError && <p className="mt-2 text-red-500">Login failed:</p>}
             <div className="mt-4 flex w-full gap-2">
               <div className="flex items-center gap-2">
