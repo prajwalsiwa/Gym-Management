@@ -14,8 +14,10 @@ interface LoginFormValues {
 function LoginForm() {
   const { mutate: login, isLoading, isError, isSuccess } = useLogin();
   const navigate = useNavigate();
-  const { register, handleSubmit } = useForm<LoginFormValues>();
+  const { register, handleSubmit, setValue, watch } =
+    useForm<LoginFormValues>();
   const [isVisible, setIsVisible] = useState(false);
+  const fields = watch(['username', 'password']);
 
   const toggleVisibility = () => {
     setIsVisible((prev: boolean) => !prev);
@@ -26,6 +28,11 @@ function LoginForm() {
       navigate('/');
     }
   });
+
+  const handleAutofill = () => {
+    setValue('username', 'emilys');
+    setValue('password', 'emilyspass');
+  };
 
   const onSubmit = (data: LoginFormValues) => {
     login({
@@ -67,31 +74,47 @@ function LoginForm() {
             onSubmit={handleSubmit(onSubmit)}
           >
             <div className="input-section flex w-full flex-col gap-2">
-              <div className="flex w-full flex-col gap-2">
-                <Label>
-                  Username
-                  <span className="text-lg text-blue-700">*</span>
-                  <span className="text-red-600">(auto-filled)</span>
+              <div className="flex w-full flex-col justify-between gap-2  ">
+                <Label className="flex w-full ">
+                  <span>
+                    Username<span className="text-lg text-blue-700">*</span>
+                  </span>
+                  <div className="group relative flex w-full justify-end">
+                    <button
+                      type="button"
+                      name="Autofill credentials"
+                      onClick={handleAutofill}
+                      className="group   w-fit rounded  bg-blue-600 px-4 py-1 text-xs text-white hover:bg-blue-700"
+                    >
+                      auto-fill
+                    </button>
+                    <span className="absolute bottom-full mb-2    hidden whitespace-nowrap rounded bg-gray-800 px-2  py-1 text-xs text-white group-hover:block">
+                      Autofill credentials
+                    </span>
+                  </div>
                 </Label>
                 <Input
                   type="text"
                   className="w-full rounded-lg border"
                   placeholder="Prajwal Siwa"
-                  value="emilys"
+                  value={fields[0]}
                   {...register('username', { required: true })}
+                  onChange={e => setValue('username', e.target.value)}
                 />
               </div>
               <div className="relative flex w-full flex-col gap-2">
-                <Label>
-                  Password<span className="text-lg text-blue-700">*</span>
-                  <span className="text-red-600">(auto-filled)</span>
+                <Label className="flex justify-between">
+                  <span>
+                    Password<span className="text-lg text-blue-700">*</span>
+                  </span>
                 </Label>
                 <Input
                   type={`${isVisible ? 'text' : 'password'}`}
                   className="w-full rounded-lg border"
-                  value="emilyspass"
                   placeholder="Min. 6 characters"
+                  value={fields[1]}
                   {...register('password', { required: true })}
+                  onChange={e => setValue('password', e.target.value)}
                 />
 
                 <Icon
@@ -101,7 +124,7 @@ function LoginForm() {
                 />
               </div>
             </div>
-            <div className="my-2 flex w-full justify-between">
+            {/* <div className="my-2 flex w-full justify-between">
               <div className="flex items-center gap-2">
                 <Input type="checkbox" />
                 <span>Keep me logged in</span>
@@ -110,8 +133,8 @@ function LoginForm() {
                 <span className="cursor-pointer text-blue-700">
                   Forgot password?
                 </span>
-              </div>
-            </div>
+              </div> */}
+            {/* </div> */}
             <Button
               type="submit"
               className="h-12 rounded-lg bg-blue-700 hover:bg-blue-800"
@@ -122,11 +145,10 @@ function LoginForm() {
               </span>
             </Button>
             <span className="text-red-600">
-              No need to type! Click `Login` to try it out with pre-filled
-              credentials.
+              Use Autofill to pre-fill credentials. Just click Login after that!
             </span>
             {isError && <p className="mt-2 text-red-500">Login failed:</p>}
-            <div className="mt-4 flex w-full gap-2">
+            {/* <div className="mt-4 flex w-full gap-2">
               <div className="flex items-center gap-2">
                 <Input type="checkbox" />
                 <span>Not registered yet?</span>
@@ -136,7 +158,7 @@ function LoginForm() {
                   Create an Account
                 </span>
               </div>
-            </div>
+            </div> */}
           </form>
         </div>
       </div>
