@@ -44,12 +44,18 @@ function LoginForm() {
   return (
     <div className="flex h-full w-full flex-col items-center justify-center  ">
       <div className="flex h-[85vh] flex-col items-center  justify-center gap-4 overflow-hidden pt-10 sm:w-[28rem]">
-        <div className="flex h-fit w-full  sm:w-[28rem] md:w-[28rem]">
+        <div className="flex h-fit w-full items-center   sm:w-[28rem] md:w-[28rem]">
           <Icon
             className="!text-sm !font-bold text-gray-400"
             name="arrow_back_ios"
           />
-          <span className="text-md text-gray-400">Back to Dashboard</span>
+          <button
+            type="button"
+            className=" text-md flex cursor-pointer items-center justify-center text-gray-400"
+            onClick={() => navigate('../')}
+          >
+            Back to Dashboard
+          </button>
         </div>
         <div className="flex h-full w-fit flex-col gap-8 pt-4 sm:w-[28rem]">
           <div>
