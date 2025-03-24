@@ -70,7 +70,7 @@ function LoginForm() {
             <hr className="w-full border-gray-300" />
           </div> */}
           <form
-            className="flex w-full flex-col"
+            className="flex w-full flex-col gap-4"
             onSubmit={handleSubmit(onSubmit)}
           >
             <div className="input-section flex w-full flex-col gap-2">
@@ -135,18 +135,21 @@ function LoginForm() {
                 </span>
               </div> */}
             {/* </div> */}
-            <Button
-              type="submit"
-              className="h-12 rounded-lg bg-blue-700 hover:bg-blue-800"
-              disabled={isLoading}
-            >
-              <span className="text-md leading-10 tracking-wider">
-                {isLoading ? 'Signing in...' : 'Sign In'}
+            <div className="w-full">
+              <Button
+                type="submit"
+                className="flex h-12 w-full flex-col rounded-lg bg-blue-700 hover:bg-blue-800"
+                disabled={isLoading}
+              >
+                <span className="text-md leading-10 tracking-wider">
+                  {isLoading ? 'Signing in...' : 'Sign In'}
+                </span>
+              </Button>
+              <span className="text-red-600">
+                Use Autofill to pre-fill credentials. Just click Login after
+                that!
               </span>
-            </Button>
-            <span className="text-red-600">
-              Use Autofill to pre-fill credentials. Just click Login after that!
-            </span>
+            </div>
             {isError && <p className="mt-2 text-red-500">Login failed:</p>}
             {/* <div className="mt-4 flex w-full gap-2">
               <div className="flex items-center gap-2">
