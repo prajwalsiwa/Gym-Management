@@ -116,7 +116,7 @@ export default function App() {
               <button
                 type="button"
                 onClick={() => navigate('/login')}
-                className="flex h-10 w-[8rem]  items-center justify-start gap-3 rounded-md  border-none bg-gray-600 pl-3  text-white outline-none hover:bg-gray-700  dark:border-gray-200"
+                className="flex h-10 w-[8rem]  items-center justify-start gap-3 rounded-md  border-none bg-gray-700 pl-3  text-white outline-none hover:bg-gray-600  dark:border-gray-200"
               >
                 <Icon name="login" />
                 Log in
